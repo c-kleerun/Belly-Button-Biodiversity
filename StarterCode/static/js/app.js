@@ -29,7 +29,6 @@ function loadBar (inputValue) {
             return data.id === inputValue;
         })[0]
 
-        console.log(dataFiltered)
             var trace1 = {
                 x: dataFiltered.sample_values.slice(0, 10).reverse(),
                 y: dataFiltered.otu_ids.slice(0, 10).map((otu_id) => {
@@ -44,6 +43,13 @@ function loadBar (inputValue) {
             var data = [trace1]
         
             var layout = {
+                title: 'Patient Top Ten OTUs',
+                xaxis: {
+                    title: 'Sample OTU Values'
+                },
+                yaxis: {
+                    title: 'OTU ID'
+                }
             };
         
             Plotly.newPlot('bar', data, layout);
@@ -56,7 +62,6 @@ function loadBar (inputValue) {
                 return data.id === inputValue;
             })[0]
     
-            console.log(dataFiltered)
                 var trace2 = {
                     x: dataFiltered.otu_ids,
                     y: dataFiltered.sample_values,
@@ -65,13 +70,20 @@ function loadBar (inputValue) {
                     marker: {
                         size: dataFiltered.sample_values,
                         color: dataFiltered.otu_ids,
-                        colorscale: 'YlGnBu'
+                        colorscale: 'Bluered'
                     },
                 };
             
                 var data = [trace2]
             
                 var layout = {
+                    title: 'Patient Sample OTUs',
+                    xaxis: {
+                        title: 'OTU IDs'
+                    },
+                    yaxis: {
+                        title: 'Sample OTU Values'
+                    }
                 };
             
                 Plotly.newPlot('bubble', data, layout);
