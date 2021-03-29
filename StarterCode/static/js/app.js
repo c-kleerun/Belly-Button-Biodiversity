@@ -61,7 +61,6 @@ function loadGauge(inputValue) {
 
         var data = [{ 
             value: metaFiltered.wfreq,
-            title: { text: `Patient ${inputValue} Wash Frequency`},
             type: 'indicator', 
             mode: 'gauge+number', 
             gauge: {
@@ -69,12 +68,14 @@ function loadGauge(inputValue) {
                 bar: {color: 'rgb(134, -0, 237)', thickness: 1}, 
                 bgcolor: 'rgb(178, 178, 178', 
                 bordercolor: 'rgb(178, 178, 178)',
-            }
+            },
+            text: metaFiltered.wfreq
         }];
 
         var layout = {
             width: 600,
             height: 600,
+            title: { text: `Subject ${inputValue} <br> Belly Button Scrubs Per Week`}
         };
 
         Plotly.newPlot('gauge', data, layout);
@@ -101,7 +102,7 @@ function loadBar(inputValue) {
         var data = [trace1]
 
         var layout = {
-            title: `Patient ${inputValue} Top 10 OTUs`,
+            title: `Subject ${inputValue} Top 10 OTUs`,
             xaxis: {
                 title: 'Sample OTU Values'
             },
@@ -136,7 +137,7 @@ function loadBubble(inputValue) {
         var data = [trace2]
 
         var layout = {
-            title: `Patient ${inputValue} Top 10 OTUs`,
+            title: `Subject ${inputValue}'s Total OTUs`,
             xaxis: {
                 title: 'OTU IDs'
             },
