@@ -1,5 +1,5 @@
 function init() {
-    d3.json('../../samples.json').then((data) => {
+    d3.json('samples.json').then((data) => {
 
         console.log(data);
 
@@ -34,7 +34,7 @@ function optionChanged() {
 
 // Function to call Demographics info
 function loadDemo(inputValue) {
-    d3.json('../../samples.json').then((data) => {
+    d3.json('samples.json').then((data) => {
         var metaFiltered = data.metadata.filter((data) => {
             return data.id == inputValue;
         })[0]
@@ -54,7 +54,7 @@ function loadDemo(inputValue) {
 
 // Function to pull data and create Gauge for wfreq 
 function loadGauge(inputValue) {
-    d3.json('../../samples.json').then((data) => {
+    d3.json('samples.json').then((data) => {
         var metaFiltered = data.metadata.filter((data) => {
             return data.id == inputValue;
         })[0]
@@ -84,7 +84,7 @@ function loadGauge(inputValue) {
 
 // Function to pull data and create bar graph for top 10 OTU values 
 function loadBar(inputValue) {
-    d3.json('../../samples.json').then((data) => {
+    d3.json('samples.json').then((data) => {
         var dataFiltered = data.samples.filter((data) => {
             return data.id === inputValue;
         })[0]
@@ -117,7 +117,7 @@ function loadBar(inputValue) {
 
 // function to pull and create bubble graph for all OTU data
 function loadBubble(inputValue) {
-    d3.json('../../samples.json').then((data) => {
+    d3.json('samples.json').then((data) => {
         var dataFiltered = data.samples.filter((data) => {
             return data.id === inputValue;
         })[0]
