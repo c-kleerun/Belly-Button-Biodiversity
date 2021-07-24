@@ -10,4 +10,6 @@ This project created several graphs that update based on the test subject number
   <li> A gauge that shows the number of times a subject scrubs their belly button each week. 
  
 Below is a sample of the dashboard:
-    
+    ![biodiversitydb (2)](https://user-images.githubusercontent.com/71466063/126877784-36fe2a51-d3c0-4c89-ad8e-f9a535dc3631.png)
+
+
